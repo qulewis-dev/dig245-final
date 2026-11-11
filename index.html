@@ -1,20 +1,41 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <!-- meta tags, links to css, etc. -->
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DND Resume</title>
+    <title>Resume Quiz Demo</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+  </head>
 
-<body>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <span class="brand">Resume Match</span>
+        <span class="tag">3-question text quiz</span>
+      </header>
 
-    <!-- visible content goes here -->
-	<h1>DND Resume</h1>
-	<p>A redesgin over DND into a fun and simple Resume in two forms, Dnd Sheet and AI Created resume.</p>
+      <main class="quiz-card">
+        <section class="intro">
+          <h1>Find your resume style</h1>
+          <p>
+            Answer three simple questions and discover the resume direction that fits your strengths.
+          </p>
+        </section>
 
-    <!-- load javascript after the page elements render -->
+        <form id="quiz-form">
+          <div id="quiz-questions" aria-live="polite"></div>
+        <button type="submit" id="submit-btn">Reveal my resume style</button>
+        </form>
+
+        <section id="result" class="result hidden" aria-live="polite">
+          <div class="result-badge">Your resume match</div>
+          <h2 id="result-title">Your result</h2>
+          <p id="result-summary"></p>
+          <ul id="result-highlights"></ul>
+        </section>
+      </main>
+    </div>
+
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>
