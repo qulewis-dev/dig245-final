@@ -9,7 +9,7 @@ const resultSummary = document.getElementById('result-summary');
 const resultHighlights = document.getElementById('result-highlights');
 
 // [AI-Generated: MAI-Code-1.1-Flash | 2026-11-11]
-// Intent: Render the three quiz cards from the API payload and allow choices to be reselected by toggling them again.
+// Intent: Render the three quiz cards from the API payload.
 function renderQuestions(questions) {
   quizContainer.innerHTML = questions
     .map((question, index) => {
@@ -32,20 +32,6 @@ function renderQuestions(questions) {
       `;
     })
     .join('');
-
-  const allRadios = form.querySelectorAll('input[type="radio"]');
-  allRadios.forEach((input) => {
-    input.addEventListener('click', () => {
-      const sameGroup = form.querySelectorAll(`input[name="${input.name}"]`);
-      const alreadySelected = input.checked && input.dataset.selected === 'true';
-
-      sameGroup.forEach((option) => {
-        const isCurrent = option === input;
-        option.checked = isCurrent && !alreadySelected;
-        option.dataset.selected = String(isCurrent && !alreadySelected);
-      });
-    });
-  });
 }
 
 // [AI-Generated: MAI-Code-1.1-Flash | 2026-11-11]
